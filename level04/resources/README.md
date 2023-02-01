@@ -40,7 +40,7 @@ The CGI is not executed, this server is not configured to run CGI.
 Check the config files of apache and we can find where cgi are handle:
 
 ```
-$ cat sites-available/level05.conf
+$ cat /etc/apache2/sites-available/level05.conf
 <VirtualHost *:4747>
         DocumentRoot    /var/www/level04/
         SuexecUserGroup flag04 level04
