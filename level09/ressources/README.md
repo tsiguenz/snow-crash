@@ -19,13 +19,21 @@ puts("You should not reverse this"You should not reverse this
 
 We cannot reverse engineed `level09` so we will have to test it manually. At fitst it seems to transform our input by shift progressing the input `aaaa -> abcd`.
 
-We think the solution is to reverse transform what's written in `token`.
-We did it by hand and programmatically, and we get `f3iji1ju5yuevaus41q1afiuq`.
-=
+We think the solution is to reverse transform what's written in `token`
+We did it by hand and programmatically using [main.c](main.c).
 
-```
-$ ./level09 f3iji1ju5yuevaus41q1afiuq
+To avoid problems with non printable characters copy the file `token` in host with scp and do
+
+```bash
+$ gcc main.c && ./a.out token
+f3iji1ju5yuevaus41q1afiuq
+$ ./level09 f3iji1ju5yuevaus41q1afiuq | cat -A
 f4kmm6p|=M-^B^?pM-^BnM-^CM-^BDBM-^CDu{^?M-^LM-^I$
+```
+
+Then try to connect with this
+
+```bash
 $ su flag09 -> f3iji1ju5yuevaus41q1afiuq
 $ getflag
 Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
