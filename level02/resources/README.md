@@ -1,4 +1,4 @@
-`* su level02 -> f2av5il02puano7naaf6adaaf`
+`su level02 -> f2av5il02puano7naaf6adaaf`
 
 We have a file named level02.pcap, which is a file format that contains the packet data generated when listening on a network.
 

