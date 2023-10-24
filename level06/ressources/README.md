@@ -1,3 +1,5 @@
+`su level06 -> viuaaale9huek52boumoomioc`
+
 We have a file named level06.php:
 
 ```php
@@ -22,6 +24,10 @@ print $r;
 ?>
 ```
 
+This php script seems to read a file, replace some regular expression found in it with the result of the y function.
+
 This script use preg_replace with the 'e' option who is a vulnerability.
+
+We found on the internet that the /e modifier in the regular expression will cause PHP to eval our input and execute the second argument.
 
 [x system('getflag');] does not work -_-
