@@ -47,5 +47,27 @@ Dump of assembler code for function main:
  0x080485e8 <+92>:	leave  
  0x080485e9 <+93>:	ret    
 End of assembler dump.
-
 ```
+
+# Solution 1
+
+After some fails trying to modify `$0x1092` to `7dd` (4242->2013) i tried to modify the eax register, so that it contains 4242 when it arrives to the if statement.
+
+```bash
+$ gdb ./level13 
+(gdb) disas main
+Dump of assembler code for function main:
+   0x08048595 <+9>:	call   0x8048380 <getuid@plt>
+   0x0804859a <+14>:	cmp    $0x1092,%eax
+(gdb) b *0x0804859a
+Breakpoint 1 at 0x804859a
+(gdb) r
+Starting program: /home/user/level13/level13 
+Breakpoint 1, 0x0804859a in main ()
+(gdb) set $eax=0x1092
+(gdb) c
+Continuing.
+your token is 2A31L79asukciNyi8uppkEuSx
+```
+
+# Solution 2
