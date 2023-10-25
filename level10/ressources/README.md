@@ -53,7 +53,7 @@ level10@SnowCrash:~$ nc -l 6969
 It's working but not with the token. Check what it's doing with ltrace with `/tmp/42`:
 
 ```bash
-level10@SnowCrash:~$ ltrace ./level10 /tmp/42  0.0.0.0)
+level10@SnowCrash:~$ ltrace ./level10 /tmp/42  0.0.0.0
 __libc_start_main(0x80486d4, 3, 0xbffff7d4, 0x8048970, 0x80489e0 <unfinished ...>)
 access("/tmp/42", 4)
 printf("Connecting to %s:6969 .. ", "0.0.0.0")

