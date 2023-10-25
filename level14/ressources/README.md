@@ -29,4 +29,4 @@ $ getflag
 Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
 ```
 
-And it's done
+And it's done !
