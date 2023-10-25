@@ -36,7 +36,7 @@ n(t(param("x"), param("y")));
 ```
 
 This script takes 2 parameter, x and y:
-- x is submitted to 2 transormations, the first to uppercase it, the second one to only keep the fist word (see https://sed.js.org/)
+- x is submitted to 2 transformations, the first to uppercase it, the second one to only keep the fist word (see https://sed.js.org/)
 - y is not transformed and just used in the if statement `if($s =~ $nn)`, but doesn't seem exploitable
 
 egrep is like grep but it will interpret the pattern argument.

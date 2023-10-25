@@ -26,7 +26,7 @@ write(1, "123\n", 4123
 
 It reads a file if its name doesn't contain token. So we have to make him read `token` referred as another name.
 
-We will try to create a symbolic link to token, so that it will pass the strstr() comparison, but still open()`token`.
+We will try to create a symbolic link to token, so that it will pass the strstr() comparison, but still open() `token`.
 
 ```bash
 $ ln -s /home/user/level08/token flag

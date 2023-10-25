@@ -2,7 +2,7 @@
 
 When we list the all users with `cat /etc/passwd`, the password field of flag01 was 42hDRfypTqqnw, different than the x of the others users.
 
-```
+```bash
 flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
 ```
 
@@ -11,8 +11,8 @@ As in the precedent level, the password was in a file named john, we want to try
 Use john to decrypt the password.
 [(Docker image of john)](https://hub.docker.com/r/phocean/john_the_ripper_jumbo)
 
-```
-echo flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash > password
-john --show password
+```bash
+$ echo flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash > password
+$ john --show password
 -> flag01:abcdefg:3001:3001::/home/flag/flag01:/bin/bash
 ```

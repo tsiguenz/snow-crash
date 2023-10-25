@@ -25,7 +25,9 @@ We did it by hand and programmatically using [main.c](main.c).
 To avoid problems with non printable characters copy the file `token` in host with scp and do
 
 ```bash
-$ gcc main.c && ./a.out token
+$ vim /tmp/main.c
+$ cd /tmp
+$ gcc main.c && ./a.out /home/user/level09/token
 f3iji1ju5yuevaus41q1afiuq
 $ ./level09 f3iji1ju5yuevaus41q1afiuq | cat -A
 f4kmm6p|=M-^B^?pM-^BnM-^CM-^BDBM-^CDu{^?M-^LM-^I$

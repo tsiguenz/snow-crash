@@ -9,8 +9,10 @@ Open this file with wireshark and put together the packets to reconstruct the me
 Analyze -> Follow -> TCP Stream -> Password: ft_wandr...NDRel.L0L
 
 su flag02 -> ft_wandr...NDRel.L0L doesn't work, so let's look back at the TCP Stream as Hex Dump
-We know that non-printable characters are replaced by dots, so the 3 dots are, in fact, the 7f code, the delete character meaning either Backspace or Delete was pressed.
+We know that non-printable characters are replaced by dots, so the 3 dots are, in fact, the `7f` code, the delete character meaning either Backspace or Delete was pressed.
 So we transform the password as if . represents a press of Backspace: ft_wandr...NDRel.L0L -> ft_waNDReL0L
 
+```bash
 su flag02 -> ft_waNDReL0L
 getflag -> kooda2puivaav1idi4f57q8iq
+```
