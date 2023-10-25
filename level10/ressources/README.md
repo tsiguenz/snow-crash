@@ -82,7 +82,6 @@ To do this we need to:
 
 ```bash
 level10@SnowCrash:~$ while true; do nc -l 6969 | grep -v ".*( )*."; done
-woupa2yuojeeaaed06riuj63c
 ```
 
 -2 Create a file where we can access / delete it / create a symlink between the file and token:
